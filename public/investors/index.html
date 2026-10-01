@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Investors · Gargantua – AI Risk Intelligence & Insurance Infrastructure</title>
+    <meta
+      name="description"
+      content="Institutional investor relations, actuarial loss distributions, market thesis, and financial traction for Gargantua AI Risk Intelligence."
+    />
+    <meta name="theme-color" content="#050507" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="stylesheet" crossorigin href="/assets/i18n-Z9sQjQEg.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-B5QA313v.css">
+    <link rel="stylesheet" crossorigin href="/assets/gargantua-portals.css">
+    <style>
+      .garg-modal { position: static; opacity: 1; pointer-events: auto; padding: 0; background: transparent; backdrop-filter: none; }
+      .garg-modal__box { max-height: none; width: 100%; box-shadow: none; border-radius: 8px; }
+      .garg-modal__close { display: none; }
+    </style>
+  </head>
+  <body style="background:#050507; color:#dce9ff;">
+    <div class="garg-page-wrapper">
+      <header class="garg-page-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <a href="/en/" style="font-family:var(--font-display); font-size:18px; font-weight:700; color:#fff; text-decoration:none;">Gargantua</a>
+          <span class="garg-badge">Investor Portal</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <a href="/test-model/" class="garg-btn garg-btn--secondary" style="padding:8px 16px;">Company Login & Test Model</a>
+          <a href="/en/" class="garg-btn garg-btn--primary" style="padding:8px 16px;">← Back to 3D Tunnel</a>
+        </div>
+      </header>
+
+      <main style="max-width:1200px; width:100%; margin:0 auto;">
+        <!-- Container for Portals -->
+        <div id="portal-container"></div>
+      </main>
+    </div>
+
+    <script src="/assets/gargantua-portals.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const invModal = document.getElementById('modal-investors');
+        if (invModal) {
+          document.getElementById('portal-container').appendChild(invModal);
+          invModal.classList.add('is-open');
+        }
+      });
+    </script>
+  </body>
+</html>
