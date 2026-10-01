@@ -778,37 +778,18 @@
       document.body.appendChild(pointer);
     }
 
-    // 2. Inject center action guide into outro section
-    function injectOutroCenterGuide() {
-      const outroSection = document.querySelector('section.chapter[data-chapter="outro"] .chapter__text');
-      if (outroSection && !document.getElementById('outro-attention-guide')) {
-        const guide = document.createElement('div');
-        guide.id = 'outro-attention-guide';
-        guide.className = 'outro-attention-guide';
-        guide.innerHTML = `
-          <div class="outro-guide-beam">
-            <div class="outro-guide-beacon">
-              <span class="outro-guide-beacon__icon">↗</span>
-              <span class="outro-guide-beacon__text">Look Above: Select "Investors" or "Company Login & Test Model"</span>
-            </div>
-          </div>
-          <div class="outro-guide-actions">
-            <button type="button" class="outro-action-btn outro-action-btn--primary" onclick="window.GargantuaPortals && window.GargantuaPortals.openCompanyPortal();">
-              <span class="hud-live-dot"></span>
-              <span>Company Login &amp; Test Model ↗</span>
-            </button>
-            <button type="button" class="outro-action-btn outro-action-btn--secondary" onclick="window.GargantuaPortals && window.GargantuaPortals.openInvestors();">
-              <span>Investors Data Room ↗</span>
-            </button>
-          </div>
-        `;
-        outroSection.appendChild(guide);
-      }
+    // Ensure any bottom duplicate buttons are removed
+    const existingBottomGuide = document.getElementById('outro-attention-guide');
+    if (existingBottomGuide) {
+      existingBottomGuide.remove();
     }
 
-    // 3. Monitor active chapter state
+    // 2. Monitor active chapter state
     function updateOutroState() {
-      injectOutroCenterGuide();
+      // Keep bottom guide clean / removed
+      const bottomGuide = document.getElementById('outro-attention-guide');
+      if (bottomGuide) bottomGuide.remove();
+
       const outroSection = document.querySelector('section.chapter[data-chapter="outro"]');
       const isOutroActive = outroSection && outroSection.classList.contains('is-active');
       
