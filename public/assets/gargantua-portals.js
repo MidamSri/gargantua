@@ -764,9 +764,75 @@
     }
   }
 
+  // Watcher for Outro Page Attention Guidance (ACTIVE ONLY ON CHAPTER 05 / OUTRO)
+  function initOutroAttentionGuide() {
+    // 1. Create floating pointer under top HUD if not present
+    if (!document.getElementById('outro-floating-pointer')) {
+      const pointer = document.createElement('div');
+      pointer.id = 'outro-floating-pointer';
+      pointer.className = 'outro-floating-pointer';
+      pointer.innerHTML = `
+        <span class="outro-pointer-arrow">☝️</span>
+        <span class="outro-pointer-pill">Select Your Entry Point</span>
+      `;
+      document.body.appendChild(pointer);
+    }
+
+    // 2. Inject center action guide into outro section
+    function injectOutroCenterGuide() {
+      const outroSection = document.querySelector('section.chapter[data-chapter="outro"] .chapter__text');
+      if (outroSection && !document.getElementById('outro-attention-guide')) {
+        const guide = document.createElement('div');
+        guide.id = 'outro-attention-guide';
+        guide.className = 'outro-attention-guide';
+        guide.innerHTML = `
+          <div class="outro-guide-beam">
+            <div class="outro-guide-beacon">
+              <span class="outro-guide-beacon__icon">↗</span>
+              <span class="outro-guide-beacon__text">Look Above: Select "Investors" or "Company Login & Test Model"</span>
+            </div>
+          </div>
+          <div class="outro-guide-actions">
+            <button type="button" class="outro-action-btn outro-action-btn--primary" onclick="window.GargantuaPortals && window.GargantuaPortals.openCompanyPortal();">
+              <span class="hud-live-dot"></span>
+              <span>Company Login &amp; Test Model ↗</span>
+            </button>
+            <button type="button" class="outro-action-btn outro-action-btn--secondary" onclick="window.GargantuaPortals && window.GargantuaPortals.openInvestors();">
+              <span>Investors Data Room ↗</span>
+            </button>
+          </div>
+        `;
+        outroSection.appendChild(guide);
+      }
+    }
+
+    // 3. Monitor active chapter state
+    function updateOutroState() {
+      injectOutroCenterGuide();
+      const outroSection = document.querySelector('section.chapter[data-chapter="outro"]');
+      const isOutroActive = outroSection && outroSection.classList.contains('is-active');
+      
+      if (isOutroActive) {
+        document.body.classList.add('is-at-outro-page');
+      } else {
+        document.body.classList.remove('is-at-outro-page');
+      }
+    }
+
+    // Observe chapter changes in content
+    const content = document.getElementById('content') || document.body;
+    const observer = new MutationObserver(updateOutroState);
+    observer.observe(content, { attributes: true, subtree: true, attributeFilter: ['class'] });
+
+    window.addEventListener('scroll', updateOutroState, { passive: true });
+    setInterval(updateOutroState, 250);
+    updateOutroState();
+  }
+
   window.addEventListener('hashchange', checkRoute);
   window.addEventListener('DOMContentLoaded', () => {
     initPortals();
+    initOutroAttentionGuide();
     checkRoute();
   });
 
