@@ -26,39 +26,39 @@ const englishContent = {
       body: 'Credit scores measure financial trust. Gargantua measures AI trust.'
     },
     heute: {
-      kicker: '01 · Observability',
-      headline: 'Continuous Fleet\nTelemetry',
-      body: 'Zero-latency risk telemetry and safety monitoring across OpenAI, Anthropic, Mistral, and private VPC clusters.'
+      kicker: '01 · The Event Horizon',
+      headline: 'Approaching the\nSingularity',
+      body: 'Gargantua is the supermassive singularity at the center of the AI revolution — measuring the gravitational pull, tail risk, and event horizon of autonomous models before they cross the point of no return.'
     },
     zeitstrahl: {
-      kicker: '02 · Stress Testing',
+      kicker: '02 · Extreme Gravitational Stress',
       headline: 'Synthetic\nRed Teaming',
-      body: 'Automated adversarial probing tests prompt injection, hallucination drift, and agent tool execution.'
+      body: 'Subjecting frontier AI systems to extreme boundary conditions. Gargantua executes 3,500+ generative red-team probes testing prompt injection, hallucination drift, and rogue agent runaway.'
     },
     'prognose-agi': {
-      kicker: '03 · Benchmark',
-      headline: 'Standardized\nTrust Scores',
-      body: 'Standardized FICO-style ratings (300–850) measuring model determinism, safety boundaries, and regulatory compliance.'
+      kicker: '03 · The Singularity Metric',
+      headline: 'The Gargantua\nTrust Score',
+      body: 'Standardized 300–850 AI Credit Rating indexing empirical model determinism, safety guardrails, alignment stability, and statutory regulatory compliance.'
     },
     'prognose-sing': {
-      kicker: '04 · Protection',
-      headline: 'Institutional\nAI Insurance',
-      body: 'Underwritten policies backed by Lloyd’s syndicates covering model liabilities, rogue agent actions, and operational loss.'
+      kicker: '04 · Loss Indemnity',
+      headline: 'Underwriting\nSuperintelligence',
+      body: 'When stochastic AI agents trigger catastrophic financial loss, legacy IT policies fail. Gargantua Syndicate #4401 and Lloyd’s of London provide actuarial insurance capacity up to $100M.'
     },
     outro: {
-      kicker: '05 · Enterprise',
-      headline: 'Deploy AI With\nInstitutional Trust',
-      body: 'Manage model fleets, run synthetic stress tests, and bind institutional insurance with Gargantua.'
+      kicker: '05 · Navigating the Horizon',
+      headline: 'Deploy Frontier AI\nWith Absolute Trust',
+      body: 'Monitor autonomous model fleets, benchmark real-time risk drift, and bind institutional loss indemnity with Gargantua.'
     }
   },
   forecasts: {
-    labs: { who: 'AI Labs', note: 'Continuous Safety Telemetry' },
-    'kurzweil-agi': { who: 'Industry Standard', note: 'Standardized Ratings' },
-    metaculus: { who: 'Market Consensus', note: 'Empirical Risk Modeling' },
-    survey: { who: 'Research Benchmark', note: 'Adversarial Resilience' },
-    experts: { who: 'Actuarial Standard', note: 'Lloyd’s Syndicate Capacity' },
+    labs: { who: 'Frontier AI Labs', note: 'Approaching the Event Horizon' },
+    'kurzweil-agi': { who: 'AGI Horizon', note: 'Autonomous Intelligence' },
+    metaculus: { who: 'Market Consensus', note: 'Singularity Trajectory' },
+    survey: { who: 'Red-Team Matrix', note: 'Adversarial Resilience' },
+    experts: { who: 'Lloyd’s Syndicate', note: 'Actuarial Capacity' },
     'kurzweil-sing': { who: 'Universal Benchmark', note: 'Gargantua Trust Score' },
-    never: { who: 'Tail Risk Bounds', note: 'Institutional Coverage', text: 'Insured' }
+    never: { who: 'Catastrophic Tail Risk', note: 'Institutional Coverage', text: 'Insured' }
   },
   milestones: {
     1950: 'Turing: Computing Machinery & Intelligence',
