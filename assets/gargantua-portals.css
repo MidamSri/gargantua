@@ -747,8 +747,12 @@
    AUTHORITATIVE MOBILE PHONE OPTIMIZATIONS (Max-Width: 767px)
    ============================================================ */
 
+/* ============================================================
+   ADVANCED MOBILE & TOUCH OPTIMIZATIONS (Max-Width: 767px)
+   ============================================================ */
+
 @media (max-width: 767px) {
-  /* Header Container - Fixed at very top and bottom of screen */
+  /* Header Container - Fixed at very top and bottom of screen with Safe Area Insets */
   .hud {
     position: fixed !important;
     inset: 0 !important;
@@ -757,10 +761,10 @@
       "wordmark controls" auto
       ". ." 1fr
       "legal credit" auto / auto 1fr !important;
-    padding: calc(14px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom)) 14px !important;
-    align-items: start !important;
+    padding: calc(10px + env(safe-area-inset-top)) 14px calc(12px + env(safe-area-inset-bottom)) 14px !important;
+    align-items: center !important;
     pointer-events: none !important;
-    background: linear-gradient(180deg, rgba(5, 5, 7, 0.8) 0%, rgba(5, 5, 7, 0.15) 10%, transparent 22%) !important;
+    background: linear-gradient(180deg, rgba(5, 5, 7, 0.88) 0%, rgba(5, 5, 7, 0.3) 12%, transparent 25%) !important;
   }
 
   .hud > * {
@@ -783,6 +787,7 @@
     letter-spacing: 0.05em !important;
     color: #ffffff !important;
     margin: 0 !important;
+    text-shadow: 0 0 15px rgba(79, 125, 255, 0.6) !important;
   }
 
   /* Controls on Mobile: Top-Right */
@@ -792,41 +797,47 @@
     align-self: center !important;
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 8px !important;
   }
 
   .hud__legal {
     grid-area: legal !important;
     justify-self: start !important;
     align-self: end !important;
-    font-size: 10px !important;
+    font-size: 10.5px !important;
+    padding: 8px 4px !important;
   }
 
   .hud__credit {
     grid-area: credit !important;
     justify-self: end !important;
     align-self: end !important;
-    font-size: 10px !important;
+    font-size: 10.5px !important;
+    padding: 8px 4px !important;
   }
 
   .hud-pill,
   .hud__controls .hud__button,
   #hud-investors-btn,
   #hud-portal-btn {
-    padding: 6px 11px !important;
-    font-size: 11.5px !important;
-    gap: 5px !important;
+    padding: 7px 13px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    gap: 6px !important;
     border-radius: 999px !important;
+    min-height: 36px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   .hud-live-dot {
-    width: 6px !important;
-    height: 6px !important;
+    width: 6.5px !important;
+    height: 6.5px !important;
   }
 
   /* Chapters & Content Spacing on Mobile */
   .chapter {
-    padding: calc(75px + env(safe-area-inset-top)) 20px calc(80px + env(safe-area-inset-bottom)) 20px !important;
+    padding: calc(68px + env(safe-area-inset-top)) 18px calc(75px + env(safe-area-inset-bottom)) 18px !important;
     align-content: center !important;
     justify-items: start !important;
     text-align: left !important;
@@ -844,91 +855,131 @@
   }
 
   .chapter__kicker {
-    font-size: 10.5px !important;
-    letter-spacing: 0.12em !important;
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
     margin-bottom: 2px !important;
   }
 
   .chapter__headline {
-    font-size: clamp(28px, 8vw, 42px) !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.025em !important;
+    font-size: clamp(26px, 7.5vw, 38px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
     text-wrap: balance !important;
     max-width: 100% !important;
   }
 
   .chapter__headline--hero {
-    font-size: clamp(38px, 12vw, 56px) !important;
+    font-size: clamp(36px, 11vw, 52px) !important;
     line-height: 0.95 !important;
-    letter-spacing: -0.035em !important;
+    letter-spacing: -0.03em !important;
   }
 
   .chapter__body {
-    font-size: 15px !important;
+    font-size: 14.5px !important;
     line-height: 1.55 !important;
     max-width: 100% !important;
-    color: rgba(220, 233, 255, 0.9) !important;
+    color: rgba(220, 233, 255, 0.92) !important;
     padding-bottom: 0 !important;
   }
 
-  /* Ticks at bottom center */
+  /* Ticks at bottom center on mobile */
   .hud__scale {
     position: fixed !important;
     top: auto !important;
     right: auto !important;
     left: 50% !important;
-    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
     transform: translateX(-50%) !important;
     flex-direction: row !important;
     gap: 0 !important;
   }
 
-  /* Modals on Mobile */
+  /* Mobile Sheet Presentation for Modals */
   .garg-modal {
-    padding: 8px !important;
+    padding: 0 !important;
     align-items: flex-end !important;
+    background: rgba(3, 4, 8, 0.88) !important;
   }
 
   .garg-modal__box {
     width: 100% !important;
-    max-height: 92vh !important;
-    border-radius: 16px 16px 8px 8px !important;
+    max-height: 88vh !important;
+    max-height: 88dvh !important;
+    border-radius: 20px 20px 0 0 !important;
+    border-bottom: none !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(79, 125, 255, 0.2) !important;
   }
 
   .garg-modal__header {
-    padding: 12px 14px !important;
-    gap: 8px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    padding: 16px 18px 12px 18px !important;
+    gap: 10px !important;
+    background: rgba(8, 12, 24, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(220, 233, 255, 0.1) !important;
+  }
+
+  /* Drag Handle bar indicator on sheet */
+  .garg-modal__header::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 4px;
+    background: rgba(220, 233, 255, 0.25);
+    border-radius: 2px;
   }
 
   .garg-modal__brand {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 4px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
   }
 
   .garg-badge {
-    font-size: 9.5px !important;
-    padding: 2px 7px !important;
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
   }
 
   .garg-modal__title {
-    font-size: 14.5px !important;
+    font-size: 15px !important;
     line-height: 1.25 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
   .garg-modal__close {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 16px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 18px !important;
     flex-shrink: 0 !important;
+    border-radius: 8px !important;
+    touch-action: manipulation !important;
   }
 
+  /* Swipeable Horizontal Tab Bar on Mobile */
   .garg-tabs {
+    position: sticky !important;
+    top: 64px !important;
+    z-index: 9 !important;
+    background: rgba(6, 8, 16, 0.95) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
     -webkit-overflow-scrolling: touch !important;
-    padding: 8px 12px !important;
-    gap: 6px !important;
+    padding: 10px 16px !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    border-bottom: 1px solid rgba(220, 233, 255, 0.08) !important;
     scrollbar-width: none !important;
   }
 
@@ -939,82 +990,149 @@
   .garg-tab {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
-    padding: 7px 12px !important;
-    font-size: 10px !important;
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
   .garg-modal__body {
-    padding: 14px !important;
-    max-height: calc(92vh - 120px) !important;
+    padding: 18px 16px 32px 16px !important;
+    gap: 24px !important;
+    max-height: calc(88vh - 125px) !important;
+    max-height: calc(88dvh - 125px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
   }
 
   .garg-stat-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
+    gap: 10px !important;
   }
 
   .garg-stat-card {
-    padding: 10px !important;
+    padding: 14px 12px !important;
+    gap: 6px !important;
+  }
+
+  .garg-stat-label {
+    font-size: 10.5px !important;
   }
 
   .garg-stat-val {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 
   .garg-stat-desc {
-    font-size: 9.5px !important;
-    line-height: 1.3 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
   }
 
   .garg-grid-2,
   .garg-grid-3 {
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 14px !important;
   }
 
   .garg-card {
-    padding: 14px !important;
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+
+  .garg-section-title {
+    font-size: 15.5px !important;
+  }
+
+  .garg-text {
+    font-size: 13.5px !important;
   }
 
   .garg-score-card {
     flex-direction: column !important;
-    padding: 16px !important;
-    gap: 14px !important;
+    padding: 18px 14px !important;
+    gap: 16px !important;
     text-align: center !important;
   }
 
   .garg-score-dial {
-    width: 96px !important;
-    height: 96px !important;
+    width: 100px !important;
+    height: 100px !important;
+    margin: 0 auto !important;
   }
 
   .garg-score-number {
-    font-size: 28px !important;
+    font-size: 30px !important;
   }
 
   .garg-terminal {
     padding: 12px !important;
+    border-radius: 8px !important;
   }
 
   .garg-terminal-body {
-    max-height: 170px !important;
-    font-size: 10.5px !important;
+    max-height: 160px !important;
+    font-size: 11px !important;
   }
 
-  .garg-btn,
-  .garg-btn-primary,
-  .garg-btn-secondary {
-    min-height: 42px !important;
-    font-size: 12px !important;
-    padding: 10px 14px !important;
+  /* Form Elements: 16px Font to Strictly Prevent iOS Auto-Zoom on Focus */
+  .garg-label {
+    font-size: 11px !important;
   }
 
   .garg-input,
-  .garg-select {
-    font-size: 13px !important;
-    padding: 9px 12px !important;
+  .garg-select,
+  .garg-textarea {
+    font-size: 16px !important;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    min-height: 46px !important;
+    -webkit-appearance: none !important;
+  }
+
+  .garg-btn,
+  .garg-btn--primary,
+  .garg-btn--secondary,
+  .garg-btn--green {
+    min-height: 48px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    padding: 12px 20px !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Table styling for mobile */
+  .garg-table th {
+    font-size: 10.5px !important;
+    padding: 10px 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .garg-table td {
+    font-size: 11.5px !important;
+    padding: 10px 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .garg-stat-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hud__controls {
+    gap: 5px !important;
+  }
+
+  .hud-pill,
+  #hud-investors-btn,
+  #hud-portal-btn {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
   }
 }
 
